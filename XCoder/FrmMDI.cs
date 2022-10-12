@@ -163,7 +163,15 @@ namespace XCoder
 
         private void aboutToolStripMenuItem_Click(Object sender, EventArgs e)
         {
-            Process.Start("http://www.NewLifeX.com");
+            OpenUrl("http://www.NewLifeX.com");
+        }
+
+        private void OpenUrl(string url)
+        {
+            var pro = new Process();
+            pro.StartInfo.FileName = "explorer.exe";
+            pro.StartInfo.Arguments = url;
+            pro.Start();
         }
         #endregion
 
